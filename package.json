@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --inline --content-base . --hot",
-    "start:prod": "cross-env NODE_ENV=production webpack-dev-server --host 0.0.0.0 --inline --content-base .",
-    "build": "./node_modules/.bin/cross-envcross-env NODE_ENV=production webpack --color -p --progress --hide-modules --display-optimization-bailout",
+    "start:prod": "./node_modules/.bin/cross-env NODE_ENV=production webpack-dev-server --host 0.0.0.0 --inline --content-base .",
+    "build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "lint": "eslint --cache --ext .js,.jsx src"
   },
   "author": "",
@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "debounce": "^1.2.0",
+    "cross-env": "^6.0.3",
     "history": "^4.10.1",
     "immutability-helper": "^3.0.1",
     "prop-types": "^15.7.2",
@@ -36,7 +37,6 @@
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",
     "dynamic-cdn-webpack-plugin": "^5.0.0",
     "eslint": "^6.8.0",
